@@ -19,7 +19,11 @@ CITUP's clustering module also requires several Python libraries such as NumPy a
 
 -- 2. INSTALLATION --
 
-To install CITUP, first go to the directory where the CITUP package is extracted. Change your directory to "./src" and modify the Boost and Cplex directories in "makefile" based on the absolute paths of these libraries in your system. Run make.
+To install CITUP, clone the repo, ensuring you use the `--recursive` option to pull in the submodules.
+
+	git clone --recursive git@github.com:sfu-compbio/citup.git
+
+Change your directory to "./src" and modify the Boost and Cplex directories in "makefile" based on the absolute paths of these libraries in your system. Run make.
 
 If the installation is successful, the following files will be placed under "./bin":
 	
@@ -28,7 +32,18 @@ If the installation is successful, the following files will be placed under "./b
 	CplexApplication.exe
 	generatingInput.exe
 	
-In addition to these binaries, there should also be scripts named "citup_iter.py", "clustering.py", "pickBestTree.py" and "runCITUP.sh" in this directory.
+In addition to these binaries, there should also be scripts named "citup_iter.py", "citup.py", "clustering.py", "pickBestTree.py" and "runCITUP.sh" in this directory.
+
+If you wish to run citup.py or citup_iter.py, you will need to install the lib/pypeliner submodule.  This can be done in two ways.
+
+Either add `lib/pypeliner` to your python path (assuming you are in the citup directory):
+
+    export PYTHONPATH=`pwd`/lib/pypeliner
+
+Or install pypeliner to your local site-packages:
+
+	cd lib/pypeliner
+	python setup.py install
 
 -- 3. INPUT PREPARATION --
 
