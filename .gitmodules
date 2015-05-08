@@ -1,0 +1,3 @@
+[submodule "lib/pypeliner"]
+	path = lib/pypeliner
+	url = git@bitbucket.org:dranew/pypeliner.git
